@@ -4,7 +4,7 @@ Este projeto utiliza um painel solar e um Arduino Uno para monitorar a geração
 
 ---
 
-## 👇 Link do Projeto no Tikercad
+## 👇 Link do Projeto no Tinkercad
 [Alarme Solar](https://www.tinkercad.com/things/e82HkvN8WWK-alarme-solar)
 
 ---
