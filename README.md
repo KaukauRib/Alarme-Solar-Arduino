@@ -4,7 +4,7 @@ Este projeto utiliza um painel solar e um Arduino Uno para monitorar a geração
 
 ---
 
-## Link do Projeto no Tikercad
+## 👇 Link do Projeto no Tikercad
 [Alarme Solar](https://www.tinkercad.com/things/e82HkvN8WWK-alarme-solar)
 
 ---
@@ -40,32 +40,43 @@ Este projeto utiliza um painel solar e um Arduino Uno para monitorar a geração
 Conecte o painel solar ao pino A0 (positivo) e GND. Conecte o buzzer ao pino digital 8 com resistor em série.
 
 ### 3. Código
-// Definições dos pinos
-const int pinoSolar = A0;     // Entrada analógica conectada ao painel solar
-const int pinoAlarme = 8;     // Saída digital conectada ao buzzer
+const int pinoSolar = A0; 
 
-// Limiar de tensão para o alarme (ajustável conforme necessidade)
-const int limiarSolar = 900;  // Valor de referência da tensão baixa
+const int pinoAlarme = 8;   
+
+const int limiarSolar = 900; 
 
 void setup() {
-  pinMode(pinoAlarme, OUTPUT);
-  Serial.begin(9600);  // Para monitoramento da tensão no Serial Monitor
-}
 
+  pinMode(pinoAlarme, OUTPUT);
+  
+  Serial.begin(9600); 
+  
+  }
+  
 void loop() {
-  int leituraSolar = analogRead(pinoSolar);  // Lê a tensão do painel solar
+
+  int leituraSolar = analogRead(pinoSolar); 
+
 
   Serial.print("Tensão Solar (valor analógico): ");
+  
   Serial.println(leituraSolar);
 
-  // Se a tensão estiver abaixo do limiar, liga o alarme
+
   if (leituraSolar < limiarSolar) {
-    digitalWrite(pinoAlarme, HIGH);  // Liga o buzzer
+  
+  digitalWrite(pinoAlarme, HIGH);
+    
   } else {
-    digitalWrite(pinoAlarme, LOW);   // Desliga o buzzer
+  
+  digitalWrite(pinoAlarme, LOW); 
+  
   }
 
+
   delay(500); 
+  
 }
 
 ---
